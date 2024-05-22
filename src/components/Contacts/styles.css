@@ -1,0 +1,12 @@
+.contacts-ul {
+    width: 200px;
+    margin: auto;
+    background-color: aqua;
+}
+
+.contacts-ul > li {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
