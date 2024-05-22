@@ -19,14 +19,10 @@ function Form() {
 
         if(!name || !phone) return false
             
-        const names = name.split(',')
-
-        const data = names.map((name) =>({id:nanoid(),name,phone}) )
-
-        dispatch(addContacts(data))
+       
 
 
-        // dispatch(addContact({id:nanoid(), name:name,phone}))
+         dispatch(addContact({id:nanoid(), name, phone:phone}))
 
         setName('')
         setPhone('')
@@ -43,8 +39,11 @@ function Form() {
             <br/>
             <input placeholder='phone' value={phone} onChange={(e) => setPhone(e.target.value)}/>
             <br/>
-            <button type='submit'>Add Contact</button>
-        </form>
+            <div className='btn'>
+            <button  type='submit'>Add</button>
+
+            </div>
+            </form>
     </div>
   )
 }

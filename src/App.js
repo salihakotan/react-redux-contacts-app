@@ -1,6 +1,7 @@
 import './App.css';
 import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Contacts from './components/Contacts';
+import Edit from './components/Contacts/Edit';
 
 function App() {
   return (
@@ -9,21 +10,14 @@ function App() {
 
     <Router>
 
+    <div  id='container'>
+    <Routes>
+      <Route exact path='/' element={<Contacts/>}/>
+      <Route path='/edit/:id' element={<Edit/>}/>
 
-      <ul>
-        <li>
-          <Link to="/">Home Page</Link>
-        </li>
-      </ul>
-
-
-        <Contacts/>
-
-
-
-      <Routes>
-      <Route path='/' element={<Home/>}/>
       </Routes>
+    </div>
+     
 
     </Router>
 
@@ -31,8 +25,6 @@ function App() {
   );
 }
 
-const Home = () => {
-    <h1>Home</h1>
-}
+
 
 export default App;
